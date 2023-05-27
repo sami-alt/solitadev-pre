@@ -16,3 +16,20 @@ services:
       - db-run:/var/run/postgresql
     ports:
       - 127.0.0.1:5432:5432
+
+  adminer:
+    image: docker.io/adminer:latest
+    restart: always
+    ports:
+      - 8081:8080
+    depends_on:
+      - database
+    networks:
+      - db_net
+
+networks:
+  db_net:
+
+volumes:
+  db-data:
+  db-run:
