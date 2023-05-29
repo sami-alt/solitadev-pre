@@ -13,8 +13,9 @@ create table journeys (
 create table citybike_stations (
     fid int not null primary key,
     id int not null,
-    name_se text not null,
     name_fi text not null,
+    name_se text not null,
+    name_en text not null,
     address_fi text not null,
     address_se text not null,
     city_fi text not null,

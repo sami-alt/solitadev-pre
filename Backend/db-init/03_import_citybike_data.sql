@@ -1,8 +1,9 @@
-COPY journeys (
+COPY citybike_stations (
     fid,
     id,
-    name_se,
     name_fi,
+    name_se,
+    name_en,
     address_fi,
     address_se,
     city_fi,
