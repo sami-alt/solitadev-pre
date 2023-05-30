@@ -1,5 +1,5 @@
 const knex = require('knex')({
-    client: 'mysql',
+    client: 'pg',
     connection: {
         host: process.env.DB_HOST || '127.0.0.1',
         port: 5432,

@@ -6,9 +6,12 @@ app.use(cors())
 const journeyRepository = require('./repositories/journeyRepository')
 
 
-app.get("/data", async (req, res) => {
+app.get("/journeys", async (req, res) => {
     try {
-        const data = await journeyRepository.getJourneys()
+        const data = await journeyRepository.getJourneys({
+            limit: Number(req.query.limit),
+            offset: Number(req.query.offset),
+        })
         res.json(data)
     } catch (err) {
         console.error(err)
