@@ -30,6 +30,8 @@ services:
     command: ["node", "/app/server.js"]
     ports:
       - "3000:3000"
+    environment:
+      DB_HOST: database
 
   adminer:
     image: docker.io/adminer:latest
