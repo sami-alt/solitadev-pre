@@ -4,6 +4,7 @@ import { Routes, Route, Link } from 'react-router-dom'
 import Home from './views/Home'
 import JourneyList from './views/JourneyList'
 import StationList from './views/StationList'
+import SingleStationView from './views/SingleStationView'
 
 function App() {
   return (
@@ -28,6 +29,7 @@ function App() {
         <Route path='/' element={<Home/>} />
         <Route path='/journeys' element={<JourneyList />} />
         <Route path='/stations' element={<StationList/>} />
+        <Route path='/stations/:fid' element={<SingleStationView />} />
       </Routes>
     </div>
   );

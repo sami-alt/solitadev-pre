@@ -1,6 +1,7 @@
 import React, { useMemo } from "react";
 import Table from "../components/Table";
 import { fetchStations } from "../api/stations";
+import { Link } from "react-router-dom";
 
 export default function StationList() {
   const tableProps = useMemo(() => {
@@ -8,7 +9,7 @@ export default function StationList() {
       fetchData: (params) => fetchStations(params),
       getRowId: (row) => row.fid,
       columns: {
-        'Station name': (row) => row.name_fi,
+        'Station name': (row) => <Link to={`/stations/${row.fid}`}>{row.name_fi}</Link>,
       }
     }
   }, [])

@@ -14,5 +14,14 @@ export async function fetchStations(params){
         const errorMessage = await result.text()
         throw new Error('Fetching  stations failed: ' + errorMessage)
     }
-    
+}
+
+export async function fetchSingleStation(fid) {
+    const result = await fetch(`${serverUrl}/stations/` + fid)
+    if(result.ok){
+        return await result.json()
+    } else {
+        const errorMessage = await result.text()
+        throw new Error('Fetching  stations failed: ' + errorMessage)
+    }
 }
