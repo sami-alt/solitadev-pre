@@ -1,0 +1,16 @@
+version: '3.8'
+
+services:
+  server:
+    image: docker.io/node:18-bullseye-slim
+    depends_on:
+      - database
+    networks:
+      - db_net
+    volumes:
+      - .:/app:z
+    command: ["node", "/app/server.js"]
+    ports:
+      - "3000:3000"
+    environment:
+      DB_HOST: database
