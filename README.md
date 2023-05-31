@@ -19,6 +19,9 @@ to make things look nice.
 
 ### Prerequisites
 
+The CSV data is included in a zip file in this repository, in [Backend/SolitaDevPre.zip](Backend/SolitaDevPre.zip). This file needs to be manually unzipped to folder Backend/SolitaDevPre,
+so that the database migrations can use that data.
+
 This project is configured to run with [Docker](https://docs.docker.com/engine/install/) and `docker-compose`, which needs to be installed.
 
 ## Starting Database and Backend and Frontend servers
