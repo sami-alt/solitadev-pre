@@ -36,6 +36,20 @@ app.get('/stations', async (req, res) => {
 	}
 })
 
+app.get('/stations/:id', async (req, res) => {
+	try {
+		const id = Number(req.params.id)
+		if (!id) {
+			res.status(422).send('Query parameter "id" is required').end()
+			return
+		} 
+		const data = await stationRepository.getStationById(id)
+		res.json(data)
+	} catch (err) {
+		onError(res, err)
+	}
+})
+
 app.listen(port, () => {
 	console.log('Server is listening in localhost:' + port)
 })
