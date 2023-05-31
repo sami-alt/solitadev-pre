@@ -43,8 +43,13 @@ app.get('/stations/:id', async (req, res) => {
 			res.status(422).send('Query parameter "id" is required').end()
 			return
 		} 
-		const data = await stationRepository.getStationById(id)
-		res.json(data)
+		const station = await stationRepository.getStationById(id)
+		if (!station) {
+			res.status(404).send('Station not found').end()
+			return
+		}
+
+		res.json(station)
 	} catch (err) {
 		onError(res, err)
 	}

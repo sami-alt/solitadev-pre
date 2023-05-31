@@ -7,9 +7,9 @@ export default function StationList() {
 	const tableProps = useMemo(() => {
 		return {
 			fetchData: (params) => fetchStations(params),
-			getRowId: (row) => row.fid,
+			getRowId: (row) => row.id,
 			columns: {
-				'Station name': (row) => <Link to={`/stations/${row.fid}`}>{row.name_fi}</Link>,
+				'Station name': (row) => <Link to={`/stations/${row.id}`}>{row.name_fi}</Link>,
 			}
 		}
 	}, [])

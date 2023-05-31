@@ -22,7 +22,6 @@ module.exports.getStationById = async (id) => {
 		])
 		.where({id})
 
-	console.log(query.toString())
 	const data = await query
-	return data
+	return data[0]
 }

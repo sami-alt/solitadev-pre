@@ -29,7 +29,7 @@ function App() {
 				<Route path='/' element={<Home/>} />
 				<Route path='/journeys' element={<JourneyList />} />
 				<Route path='/stations' element={<StationList/>} />
-				<Route path='/stations/:fid' element={<SingleStationView />} />
+				<Route path='/stations/:id' element={<SingleStationView />} />
 			</Routes>
 		</div>
 	)

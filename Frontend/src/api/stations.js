@@ -10,6 +10,6 @@ export async function fetchStations(params){
 /**
  * @param {number} fid 
  */
-export async function fetchSignleStation(fid){
-	return await getData('stations/' + fid)
+export async function fetchStationById(id){
+	return await getData('stations/' + id)
 }
