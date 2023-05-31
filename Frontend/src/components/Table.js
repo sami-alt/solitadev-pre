@@ -23,14 +23,14 @@ export default function Table(props) {
 		})
 	}, [page])
 
-	if (!data) {
-		return 'Loading...'
-	}
-
 	if (error) {
 		return <div>
             Error: {error}
 		</div>
+	}
+
+	if (!data) {
+		return 'Loading...'
 	}
 
 	const columnNames = Object.keys(props.columns)
