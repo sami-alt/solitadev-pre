@@ -8,9 +8,19 @@ services:
     networks:
       - db_net
     volumes:
-      - .:/app:z
-    command: ["node", "/app/server.js"]
+      - .:/app:ro
+      - ../start-service-in-docker.sh:/start-service-in-docker.sh:ro
+    command: ["/start-service-in-docker.sh"]
     ports:
-      - "3000:3000"
+      - "3001:3001"
     environment:
       DB_HOST: database
+
+  web:
+    image: docker.io/node:18-bullseye-slim
+    volumes:
+      - ../Frontend:/app:ro
+      - ../start-service-in-docker.sh:/start-service-in-docker.sh:ro
+    command: ["/start-service-in-docker.sh"]
+    ports:
+      - "3000:3000"
